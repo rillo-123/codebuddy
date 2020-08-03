@@ -3,11 +3,6 @@ Created on Jul 24, 2020
 
 @author: gems
 '''
+import PySimpleGUI as sg
 
-if __name__ == '__main__':
-    pass
-
-
-
-
-print ("Hello this is codebuddy")
+sg.Window(title="Hello World", layout=[[]], margins=(100, 50)).read()
