@@ -11,21 +11,73 @@ sg.theme('DarkAmber')   # Add a touch of color
 # All the stuff inside your window.
 
 
-# layout = [  [sg.Text('Some text on Row 1')],
-#             [sg.Text('Enter something on Row 2'), sg.InputText()],
-#             [sg.Text('Enter something on Row 3'), sg.InputText()],
-#             [sg.Checkbox('Hello')],
-#             [sg.Button('Ok'), sg.Button('Cancel')] ]
+tab1_layout = [
+                [
+                    sg.Text('Some text on Row 1')
+                ],
+                [
+                    sg.Text('Enter something on Row 2'), sg.InputText()
+                ],
+                [
+                    sg.Text('Enter something on Row 3'), sg.InputText()
+                ],
+                [
+                    sg.Checkbox('Hello')
+                ],
+                [
+                    sg.Button('Ok'), sg.Button('Cancel')
+                ]
+            ]
+
+tab2_layout = [
+                [
+                    sg.T('This is inside tab 2')
+                ],
+                
+                [
+                    sg.In(key='in')
+                ]
+            ]
 
 
-tab1_layout =  [[sg.T('This is inside tab 1')]]
+tab3_layout = [
+                [
+                    sg.T('Find C files')
+                ],
+                
+                [
+                    sg.Text('Root folder')
+                ],               
+                [
+                  sg.Input(), sg.FolderBrowse()
+                ], 
+                [
+                    sg.Button('Start Scanning'), sg.Button('Cancel')
+                ]
 
-tab2_layout = [[sg.T('This is inside tab 2')],
-               [sg.In(key='in')]]
+            ]
 
-layout = [[sg.TabGroup([[sg.Tab('Tab 1', tab1_layout), sg.Tab('Tab 2', tab2_layout)]])],
-              [sg.Button('Read')]]
 
+
+
+layout = [
+            [
+                sg.TabGroup
+                (
+                    [
+                        [
+                            sg.Tab('Tab 1', tab1_layout),
+                            sg.Tab('Tab 2', tab2_layout),
+                            sg.Tab('Tab 3', tab3_layout)
+                        ]
+                    ]
+                )
+            ],
+            
+            [
+                sg.Button('Read')
+            ]
+         ]
 
 
 # Create the Window
